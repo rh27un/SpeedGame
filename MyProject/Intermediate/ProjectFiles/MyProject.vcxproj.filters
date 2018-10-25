@@ -4,7 +4,7 @@
 	<ItemGroup>
 		<None Include="..\..\MyProject.uproject" />
 		<Filter Include="Source">
-			<UniqueIdentifier>{D1178029-DB83-49E7-A536-964485D1A9D0}</UniqueIdentifier>
+			<UniqueIdentifier>{1C2F9A53-ADDF-46D5-959F-470D3539726B}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Source\MyProject.Target.cs">
 			<Filter>Source</Filter>
@@ -13,7 +13,7 @@
 			<Filter>Source</Filter>
 		</None >
 		<Filter Include="Config">
-			<UniqueIdentifier>{662A4043-A0E1-457C-9F2E-22210D25B8A0}</UniqueIdentifier>
+			<UniqueIdentifier>{D7008980-E8B3-4851-BD80-1B7542CDF54A}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Config\DefaultEditor.ini">
 			<Filter>Config</Filter>
@@ -31,8 +31,14 @@
 			<Filter>Config</Filter>
 		</None >
 		<Filter Include="Source\MyProject">
-			<UniqueIdentifier>{6A33C702-F392-4ACF-A112-B41FA647251C}</UniqueIdentifier>
+			<UniqueIdentifier>{15551137-CDA8-4412-8BA7-F92CD38F7357}</UniqueIdentifier>
 		</Filter>
+		<ClCompile Include="..\..\Source\MyProject\Bombponent.cpp">
+			<Filter>Source\MyProject</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\MyProject\Bombponent.h">
+			<Filter>Source\MyProject</Filter>
+		</ClInclude >
 		<None Include="..\..\Source\MyProject\MyProject.Build.cs">
 			<Filter>Source\MyProject</Filter>
 		</None >
