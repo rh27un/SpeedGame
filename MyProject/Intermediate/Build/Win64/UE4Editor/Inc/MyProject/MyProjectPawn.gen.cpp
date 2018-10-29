@@ -124,7 +124,7 @@ void EmptyLinkFunctionForGeneratedCodeMyProjectPawn() {}
 	{
 		((AMyProjectPawn*)Obj)->bInCarCameraActive = 1;
 	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMyProjectPawn_Statics::NewProp_bInCarCameraActive = { UE4CodeGen_Private::EPropertyClass::Bool, "bInCarCameraActive", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000030015, 1, nullptr, sizeof(bool), UE4CodeGen_Private::ENativeBool::Native, sizeof(AMyProjectPawn), &Z_Construct_UClass_AMyProjectPawn_Statics::NewProp_bInCarCameraActive_SetBit, METADATA_PARAMS(Z_Construct_UClass_AMyProjectPawn_Statics::NewProp_bInCarCameraActive_MetaData, ARRAY_COUNT(Z_Construct_UClass_AMyProjectPawn_Statics::NewProp_bInCarCameraActive_MetaData)) };
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMyProjectPawn_Statics::NewProp_bInCarCameraActive = { UE4CodeGen_Private::EPropertyClass::Bool, "bInCarCameraActive", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000010015, 1, nullptr, sizeof(bool), UE4CodeGen_Private::ENativeBool::Native, sizeof(AMyProjectPawn), &Z_Construct_UClass_AMyProjectPawn_Statics::NewProp_bInCarCameraActive_SetBit, METADATA_PARAMS(Z_Construct_UClass_AMyProjectPawn_Statics::NewProp_bInCarCameraActive_MetaData, ARRAY_COUNT(Z_Construct_UClass_AMyProjectPawn_Statics::NewProp_bInCarCameraActive_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyProjectPawn_Statics::NewProp_GearDisplayReverseColor_MetaData[] = {
 		{ "Category", "Display" },
@@ -254,7 +254,7 @@ void EmptyLinkFunctionForGeneratedCodeMyProjectPawn() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AMyProjectPawn, 3003223015);
+	IMPLEMENT_CLASS(AMyProjectPawn, 2876578485);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AMyProjectPawn(Z_Construct_UClass_AMyProjectPawn, &AMyProjectPawn::StaticClass, TEXT("/Script/MyProject"), TEXT("AMyProjectPawn"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AMyProjectPawn);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

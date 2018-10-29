@@ -23,7 +23,6 @@ class AMyProjectPawn : public AWheeledVehicle
 	/** Camera component that will be our viewpoint */
 	UPROPERTY(Category = Camera, VisibleDefaultsOnly, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	UCameraComponent* Camera;
-
 	/** SCene component for the In-Car view origin */
 	UPROPERTY(Category = Camera, VisibleDefaultsOnly, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	class USceneComponent* InternalCameraBase;
@@ -61,8 +60,8 @@ public:
 	FColor	GearDisplayReverseColor;
 
 	/** Are we using incar camera */
-	UPROPERTY(Category = Camera, VisibleDefaultsOnly, BlueprintReadOnly)
-	bool bInCarCameraActive;
+	UPROPERTY(Category = Camera, EditDefaultsOnly, BlueprintReadOnly)
+	bool bInCarCameraActive = false;
 
 	/** Are we in reverse gear */
 	UPROPERTY(Category = Camera, VisibleDefaultsOnly, BlueprintReadOnly)
@@ -99,6 +98,8 @@ public:
 	void OnToggleCamera();
 	/** Handle reset VR device */
 	void OnResetVR();
+
+	int GetSpeedInKPH();
 
 	static const FName LookUpBinding;
 	static const FName LookRightBinding;

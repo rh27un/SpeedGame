@@ -77,7 +77,6 @@ AMyProjectPawn::AMyProjectPawn()
 	Camera->SetupAttachment(SpringArm, USpringArmComponent::SocketName);
 	Camera->bUsePawnControlRotation = false;
 	Camera->FieldOfView = 90.f;
-
 	// Create In-Car camera component 
 	InternalCameraOrigin = FVector(0.0f, -40.0f, 120.0f);
 
@@ -136,7 +135,7 @@ void AMyProjectPawn::SetupPlayerInputComponent(class UInputComponent* PlayerInpu
 
 	PlayerInputComponent->BindAction("Handbrake", IE_Pressed, this, &AMyProjectPawn::OnHandbrakePressed);
 	PlayerInputComponent->BindAction("Handbrake", IE_Released, this, &AMyProjectPawn::OnHandbrakeReleased);
-	PlayerInputComponent->BindAction("SwitchCamera", IE_Pressed, this, &AMyProjectPawn::OnToggleCamera);
+	//PlayerInputComponent->BindAction("SwitchCamera", IE_Pressed, this, &AMyProjectPawn::OnToggleCamera);
 
 	PlayerInputComponent->BindAction("ResetVR", IE_Pressed, this, &AMyProjectPawn::OnResetVR); 
 }
@@ -226,11 +225,11 @@ void AMyProjectPawn::BeginPlay()
 {
 	Super::BeginPlay();
 
-	bool bEnableInCar = false;
+	bool bEnableInCar = true;
 #if HMD_MODULE_INCLUDED
-	bEnableInCar = UHeadMountedDisplayFunctionLibrary::IsHeadMountedDisplayEnabled();
+	//bEnableInCar = UHeadMountedDisplayFunctionLibrary::IsHeadMountedDisplayEnabled();
 #endif // HMD_MODULE_INCLUDED
-	EnableIncarView(bEnableInCar,true);
+	EnableIncarView(bEnableInCar, true);
 }
 
 void AMyProjectPawn::OnResetVR()
@@ -245,10 +244,16 @@ void AMyProjectPawn::OnResetVR()
 #endif // HMD_MODULE_INCLUDED
 }
 
-void AMyProjectPawn::UpdateHUDStrings()
+int AMyProjectPawn::GetSpeedInKPH()
 {
 	float KPH = FMath::Abs(GetVehicleMovement()->GetForwardSpeed()) * 0.036f;
 	int32 KPH_int = FMath::FloorToInt(KPH);
+	return KPH_int;
+}
+
+void AMyProjectPawn::UpdateHUDStrings()
+{
+	int32 KPH_int = GetSpeedInKPH();
 
 	// Using FText because this is display text that should be localizable
 	SpeedDisplayString = FText::Format(LOCTEXT("SpeedFormat", "{0} km/h"), FText::AsNumber(KPH_int));

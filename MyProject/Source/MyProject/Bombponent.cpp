@@ -11,8 +11,18 @@ UBombponent::UBombponent()
 	PrimaryComponentTick.bCanEverTick = true;
 
 	// ...
+	if (Cast<AMyProjectPawn>(GetOwner())) {
+		OwnerCar = Cast<AMyProjectPawn>(GetOwner());
+	}
 }
 
+
+void UBombponent::OnExplode()
+{
+	GEngine->AddOnScreenDebugMessage(1, 5.f, FColor::Red, TEXT("kaboom"));
+	Cast<UPrimitiveComponent>(OwnerCar->GetRootComponent())->AddImpulse(FVector::UpVector * 1000.f);
+	bIsDead = true;
+}
 
 // Called when the game starts
 void UBombponent::BeginPlay()
@@ -20,6 +30,7 @@ void UBombponent::BeginPlay()
 	Super::BeginPlay();
 
 	// ...
+	
 	
 }
 
@@ -30,5 +41,24 @@ void UBombponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComp
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
 	// ...
+	if (bIsDead)
+		return;
+
+	if (!GetWorld()->GetTimerManager().IsTimerActive(BombTimerHandle)) {
+		//if car speed is lower than trigger speed, start the bomb timer.
+		if (OwnerCar->GetSpeedInKPH() < TriggerSpeed) {
+			GetWorld()->GetTimerManager().SetTimer(BombTimerHandle, this, &UBombponent::OnExplode, BombTime, false);
+			GEngine->AddOnScreenDebugMessage(1, 5.f, FColor::Red, TEXT("unsafe"));
+		}
+	}
+	else {
+		float timeLeft = GetWorld()->GetTimerManager().GetTimerRemaining(BombTimerHandle);
+		GEngine->AddOnScreenDebugMessage(1, 5.f, FColor::Red, FString::Printf(TEXT("Time left: %f"), timeLeft));
+		if (OwnerCar->GetSpeedInKPH() > TriggerSpeed) {
+			//if car speed is higher than trigger speed, stop & reset the bomb timer.
+			GEngine->AddOnScreenDebugMessage(1, 5.f, FColor::Red, TEXT("Safe"));
+			GetWorld()->GetTimerManager().ClearTimer(BombTimerHandle);
+		}
+	}
 }
 

@@ -13,9 +13,29 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define MYPROJECT_Bombponent_generated_h
 
-#define MyProject_Source_MyProject_Bombponent_h_13_RPC_WRAPPERS
-#define MyProject_Source_MyProject_Bombponent_h_13_RPC_WRAPPERS_NO_PURE_DECLS
-#define MyProject_Source_MyProject_Bombponent_h_13_INCLASS_NO_PURE_DECLS \
+#define MyProject_Source_MyProject_Bombponent_h_14_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execOnExplode) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->OnExplode(); \
+		P_NATIVE_END; \
+	}
+
+
+#define MyProject_Source_MyProject_Bombponent_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execOnExplode) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->OnExplode(); \
+		P_NATIVE_END; \
+	}
+
+
+#define MyProject_Source_MyProject_Bombponent_h_14_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUBombponent(); \
 	friend struct Z_Construct_UClass_UBombponent_Statics; \
@@ -24,7 +44,7 @@ public: \
 	DECLARE_SERIALIZER(UBombponent)
 
 
-#define MyProject_Source_MyProject_Bombponent_h_13_INCLASS \
+#define MyProject_Source_MyProject_Bombponent_h_14_INCLASS \
 private: \
 	static void StaticRegisterNativesUBombponent(); \
 	friend struct Z_Construct_UClass_UBombponent_Statics; \
@@ -33,7 +53,7 @@ public: \
 	DECLARE_SERIALIZER(UBombponent)
 
 
-#define MyProject_Source_MyProject_Bombponent_h_13_STANDARD_CONSTRUCTORS \
+#define MyProject_Source_MyProject_Bombponent_h_14_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UBombponent(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UBombponent) \
@@ -46,7 +66,7 @@ private: \
 public:
 
 
-#define MyProject_Source_MyProject_Bombponent_h_13_ENHANCED_CONSTRUCTORS \
+#define MyProject_Source_MyProject_Bombponent_h_14_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API UBombponent(UBombponent&&); \
@@ -57,26 +77,26 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UBombponent); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UBombponent)
 
 
-#define MyProject_Source_MyProject_Bombponent_h_13_PRIVATE_PROPERTY_OFFSET
-#define MyProject_Source_MyProject_Bombponent_h_10_PROLOG
-#define MyProject_Source_MyProject_Bombponent_h_13_GENERATED_BODY_LEGACY \
+#define MyProject_Source_MyProject_Bombponent_h_14_PRIVATE_PROPERTY_OFFSET
+#define MyProject_Source_MyProject_Bombponent_h_11_PROLOG
+#define MyProject_Source_MyProject_Bombponent_h_14_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	MyProject_Source_MyProject_Bombponent_h_13_PRIVATE_PROPERTY_OFFSET \
-	MyProject_Source_MyProject_Bombponent_h_13_RPC_WRAPPERS \
-	MyProject_Source_MyProject_Bombponent_h_13_INCLASS \
-	MyProject_Source_MyProject_Bombponent_h_13_STANDARD_CONSTRUCTORS \
+	MyProject_Source_MyProject_Bombponent_h_14_PRIVATE_PROPERTY_OFFSET \
+	MyProject_Source_MyProject_Bombponent_h_14_RPC_WRAPPERS \
+	MyProject_Source_MyProject_Bombponent_h_14_INCLASS \
+	MyProject_Source_MyProject_Bombponent_h_14_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define MyProject_Source_MyProject_Bombponent_h_13_GENERATED_BODY \
+#define MyProject_Source_MyProject_Bombponent_h_14_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	MyProject_Source_MyProject_Bombponent_h_13_PRIVATE_PROPERTY_OFFSET \
-	MyProject_Source_MyProject_Bombponent_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
-	MyProject_Source_MyProject_Bombponent_h_13_INCLASS_NO_PURE_DECLS \
-	MyProject_Source_MyProject_Bombponent_h_13_ENHANCED_CONSTRUCTORS \
+	MyProject_Source_MyProject_Bombponent_h_14_PRIVATE_PROPERTY_OFFSET \
+	MyProject_Source_MyProject_Bombponent_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+	MyProject_Source_MyProject_Bombponent_h_14_INCLASS_NO_PURE_DECLS \
+	MyProject_Source_MyProject_Bombponent_h_14_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
